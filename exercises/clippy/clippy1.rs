@@ -8,14 +8,16 @@
 
 // I AM DONE
 
-#[deny(clippy::float_cmp)]
+use std::f32;
 
 fn main() {
-    let x = 1.2331f64;
-    let y = 1.2332f64;
-    let e = 0.0001f64;
-    //if y != x {
-    if (x-y).abs() > e {
-        println!("Success!");
-    }
+    let pi = f32::consts::PI; //3.14f32;
+    let radius = 5.00f32;
+
+    let area = pi * f32::powi(radius, 2);
+
+    println!(
+        "The area of a circle with radius {:.2} is {:.5}!",
+        radius, area
+    )
 }
